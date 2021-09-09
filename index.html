@@ -1,0 +1,74 @@
+<!-- 대부분의 웹 서바가 디폴트로 index.html 을 찾아보도록 설정되어있음 -->
+<!-- index는 영어에서 '첫번째'라는 의미 -->
+
+<!-- 단축키 모음 -->
+<!--  '!'를 입력하고 '!'를 선택하면 기본적인 html 구성이 세팅된다 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcom to Kakao Clone</title>
+</head>
+<body>
+    <!-- id 는 고유한 값이여야 한다. 상태바는 한개밖에 없기 때문 -->
+    <!-- BEM 방식 알아두기 모두 클래스를 사용한다. 자세한거는 찾아서 알아보기 -->
+    <div class="status-bar">    
+        <!-- class 이름을 column으로 하기에는 너무 흔하다. 다른 곳에서 분명히 쓰일거기 때문에 조금 특별하게 지어주는게 여러모로 이점이 있다. -->
+        <!-- 만약 status-bar column으로 하면 2개의 클래스 이름이 만들어 진것이다. 구분하여 잘 작성하도록하자 -->
+        <!-- status-bar__column 이라고 지으면 부모와 자식의 관계를 쉽게 이해 가능하다 -->
+        <div class="status-bar__column">
+            <span>No Service</span>
+            <!-- 아이콘을 사용 -> 많이 쓰는 2가지 방법 -->
+            <!-- 첫번째 : Heroicons 검색 -> 무료버전 접속 -> 원하는 아이콘 이름 검색 -> 클릭하면 복사됨 -> 원하는 자리에 SVG형태로 붙여넣기 -->
+            <!-- 두번째 : FontAwesome 검색 -> 이메일 입력후 키코드 받고 ->  스크립트는 항상 마지막에 있어야 한다 . 마지막 body태크를 닫기 직전에 위치 -> 원하는 아이콘 검색 후 태그 복사 -->
+            <!-- 모든 아이콘은 자기만의 이름이 있다. 클래스를 함부로 바꾸지 말것 작동이 안될 수 있음 -->
+            <!-- 아이콘 : 와이파이 -->
+            <!-- <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path></svg> -->
+            <i class="fas fa-wifi"></i>
+        </div>
+        <div class="status-bar__column">
+            <span>18:43</span>
+        </div>
+        <div class="status-bar__column">
+            <!-- 아이콘 : 잠금표시 -->
+            <i class="fas fa-unlock"></i>
+            <span>110%</span>
+            <!-- 아이콘 : 베터리 -->
+            <!-- 아이콘 크기 조절 font awesome 들어가서 아이콘 검색하고 크기 보기 ex) 2x,3x,5x -> 클래스명에 fa-2x,fa-3x 등등 적기 -->
+            <i class="fas fa-battery-full fa-lg"></i>
+            <!-- 아이콘 : 충전중 표시 -->
+            <i class="fas fa-bolt"></i>
+        </div>
+    </div>
+
+    <!-- 헤더 클래스 이름은 웹사이트에 header가 최소 5개 있을테니 구분지어서 해주는게 좋다 -->
+    <header class="welcome-header">
+        <h1 class="welcome-header__title">Welcome to Kokoa Clone</h1>
+        <p class="welcome-header__text">카카오 아이디가 있다면 로그인 해주세요</p>
+    </header>
+
+    
+    <!-- 여기서 form의 클래스 이름을 안줘도 되는 이유는? 만들려는 form이 한개이기 때문이다. 만약 2개 이상이면 고려를 해봐야 겠지? -->
+    <!-- 모든 태그들은 웬만하면 id 또는 class 이름을 지어주는 게 좋다 -->
+    <!-- 클래슬르 부여해도 되지만 여기서는 id를 부여해 보겠다. -->
+    <form id="login-form">
+        <input type="text" placeholder="Email or phone number">
+        <input type="password" placeholder="Password">
+        <!-- 버튼을 추가하는 2가지 방법 in from -->
+        <!-- <button></button> -->
+        <!-- <input type="submit" value=""> -->
+        <input type="submit" value="Log In">   
+        <a href="#">Find KaKao Account or Password</a>
+    </form>
+
+
+    <script
+        src="https://kit.fontawesome.com/6478f529f2.js"
+        crossorigin="anonymous"
+    ></script>
+</body>
+</html>
